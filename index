@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Racepack Dashboard</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Page -->
+  <div id="loginPage" class="login-container">
+    <h2>Masukkan Password</h2>
+    <input type="password" id="passwordInput" placeholder="Password">
+    <button onclick="checkPassword()">Login</button>
+    <p id="loginError" class="error"></p>
+  </div>
+
+  <!-- Dashboard -->
+  <div id="dashboard" style="display:none;">
+    <header>
+      <img src="logo.jpg" alt="Logo" class="logo">
+      <h1>Racepack Dashboard</h1>
+    </header>
+
+    <!-- Summary -->
+    <section id="summary" class="summary-container">
+      <!-- Summary akan diisi lewat JS -->
+    </section>
+
+    <!-- Search -->
+    <div class="search-container">
+      <input type="text" id="searchInput" placeholder="Cari No Bib / Nama / Barcode" onkeyup="filterTable()">
+    </div>
+
+    <!-- Table -->
+    <div class="table-container">
+      <table id="dataTable">
+        <thead id="tableHead"></thead>
+        <tbody id="tableBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
