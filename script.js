@@ -1,6 +1,6 @@
 // ======= Konfigurasi =======
 const PASSWORD = "tcr2025"; // Ganti password login sesuai kebutuhan
-const API_URL = "https://script.google.com/macros/s/AKfycbwIh7PWcTplTYoqTFlTf0usIyB4fZaOwx9TQjQpyA-kDRfblS7AtuRLw-Xz-vNDoYww/exec"; // URL dari Apps Script deploy
+const API_URL = "https://script.google.com/macros/s/AKfycbzZiOupSc9uWSmyJ_BzVodYmqoS8Q4vtZcHlFajD9xJ1DFkpf63d2wPWIqERRI-uFqa/exec"; // URL dari Apps Script deploy
 
 // ======= Login =======
 document.addEventListener("DOMContentLoaded", () => {
