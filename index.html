@@ -1,47 +1,74 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Racepack Dashboard</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racepack Dashboard</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Login Page -->
-  <div id="loginPage" class="login-container">
-    <h2>Masukkan Password</h2>
-    <input type="password" id="passwordInput" placeholder="Password">
-    <button onclick="checkPassword()">Login</button>
-    <p id="loginError" class="error"></p>
-  </div>
-
-  <!-- Dashboard -->
-  <div id="dashboard" style="display:none;">
-    <header>
-      <img src="logo.jpg" alt="Logo" class="logo">
-      <h1>Racepack Dashboard</h1>
-    </header>
-
-    <!-- Summary -->
-    <section id="summary" class="summary-container">
-      <!-- Summary akan diisi lewat JS -->
-    </section>
-
-    <!-- Search -->
-    <div class="search-container">
-      <input type="text" id="searchInput" placeholder="Cari No Bib / Nama / Barcode" onkeyup="filterTable()">
+    <!-- Halaman Login -->
+    <div id="login-page" class="container">
+        <img src="logo.jpg" alt="Logo" class="logo">
+        <h1>Racepack Dashboard</h1>
+        <input type="password" id="password" placeholder="Masukkan Password" />
+        <button onclick="login()">Login</button>
+        <p id="login-error" class="error-message"></p>
     </div>
 
-    <!-- Table -->
-    <div class="table-container">
-      <table id="dataTable">
-        <thead id="tableHead"></thead>
-        <tbody id="tableBody"></tbody>
-      </table>
-    </div>
-  </div>
+    <!-- Halaman Dashboard -->
+    <div id="dashboard" class="container" style="display:none;">
+        <header>
+            <img src="logo.jpg" alt="Logo" class="logo">
+            <h1>Racepack Dashboard</h1>
+            <button onclick="logout()">Logout</button>
+        </header>
 
-  <script src="script.js"></script>
+        <!-- Ringkasan Stok -->
+        <section id="stok-summary">
+            <h2>Ringkasan Stok</h2>
+            <div class="stok-grid">
+                <div>XS: <span id="stok-XS">0</span> | Belum diambil: <span id="belum-XS">0</span></div>
+                <div>S: <span id="stok-S">0</span> | Belum diambil: <span id="belum-S">0</span></div>
+                <div>M: <span id="stok-M">0</span> | Belum diambil: <span id="belum-M">0</span></div>
+                <div>L: <span id="stok-L">0</span> | Belum diambil: <span id="belum-L">0</span></div>
+                <div>XL: <span id="stok-XL">0</span> | Belum diambil: <span id="belum-XL">0</span></div>
+                <div>XXL: <span id="stok-XXL">0</span> | Belum diambil: <span id="belum-XXL">0</span></div>
+                <div>XXXL: <span id="stok-XXXL">0</span> | Belum diambil: <span id="belum-XXXL">0</span></div>
+            </div>
+            <div class="stok-total">
+                Total Baju: <span id="total-baju">0</span> | Total Belum Diambil: <span id="total-belum">0</span>
+            </div>
+        </section>
+
+        <!-- Pencarian -->
+        <section>
+            <input type="text" id="search-input" placeholder="Cari No BIB, Nama Peserta, Barcode..." onkeyup="searchTable()" />
+        </section>
+
+        <!-- Tabel Data -->
+        <table id="data-table">
+            <thead>
+                <tr>
+                    <th>Kategori</th>
+                    <th>No BIB</th>
+                    <th>Nama Peserta</th>
+                    <th>Size Baju</th>
+                    <th>Barcode</th>
+                    <th>Status</th>
+                    <th>Nama Staff</th>
+                    <th>Nama Pengambil</th>
+                    <th>No HP Pengambil</th>
+                    <th>No ID Card Pengambil</th>
+                    <th>Keterangan</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Data dari Google Sheet akan dimasukkan di sini -->
+            </tbody>
+        </table>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
