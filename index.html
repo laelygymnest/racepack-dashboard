@@ -1,53 +1,43 @@
 <!DOCTYPE html>
 <html lang="id">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Racepack Dashboard</title>
-    <link rel="stylesheet" href="style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Stok Baju</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
     <!-- Halaman Login -->
-    <div id="login-page" class="container">
+    <div id="loginPage" class="login-container">
         <img src="logo.jpg" alt="Logo" class="logo">
-        <h1>Racepack Dashboard</h1>
-        <input type="password" id="password" placeholder="Masukkan Password" />
-        <button onclick="login()">Login</button>
-        <p id="login-error" class="error-message"></p>
+        <h2>Login untuk Akses Data</h2>
+        <form id="loginForm">
+            <input type="password" id="password" placeholder="Masukkan password" required>
+            <button type="submit">Login</button>
+        </form>
     </div>
 
-    <!-- Halaman Dashboard -->
-    <div id="dashboard" class="container" style="display:none;">
+    <!-- Konten Utama -->
+    <div id="mainContent" style="display:none;">
         <header>
             <img src="logo.jpg" alt="Logo" class="logo">
-            <h1>Racepack Dashboard</h1>
-            <button onclick="logout()">Logout</button>
+            <h1>Data Stok Baju Peserta</h1>
         </header>
 
         <!-- Ringkasan Stok -->
-        <section id="stok-summary">
-            <h2>Ringkasan Stok</h2>
-            <div class="stok-grid">
-                <div>XS: <span id="stok-XS">0</span> | Belum diambil: <span id="belum-XS">0</span></div>
-                <div>S: <span id="stok-S">0</span> | Belum diambil: <span id="belum-S">0</span></div>
-                <div>M: <span id="stok-M">0</span> | Belum diambil: <span id="belum-M">0</span></div>
-                <div>L: <span id="stok-L">0</span> | Belum diambil: <span id="belum-L">0</span></div>
-                <div>XL: <span id="stok-XL">0</span> | Belum diambil: <span id="belum-XL">0</span></div>
-                <div>XXL: <span id="stok-XXL">0</span> | Belum diambil: <span id="belum-XXL">0</span></div>
-                <div>XXXL: <span id="stok-XXXL">0</span> | Belum diambil: <span id="belum-XXXL">0</span></div>
-            </div>
-            <div class="stok-total">
-                Total Baju: <span id="total-baju">0</span> | Total Belum Diambil: <span id="total-belum">0</span>
-            </div>
+        <section id="summary">
+            <p><strong>Total Stok:</strong> <span id="totalStok">0</span></p>
+            <p><strong>Total Belum Diambil:</strong> <span id="totalBelum">0</span></p>
         </section>
 
         <!-- Pencarian -->
-        <section>
-            <input type="text" id="search-input" placeholder="Cari No BIB, Nama Peserta, Barcode..." onkeyup="searchTable()" />
+        <section id="searchSection">
+            <input type="text" id="searchInput" placeholder="Cari No BIB, Nama, atau Barcode">
         </section>
 
         <!-- Tabel Data -->
-        <table id="data-table">
+        <table id="dataTable">
             <thead>
                 <tr>
                     <th>Kategori</th>
@@ -64,7 +54,7 @@
                 </tr>
             </thead>
             <tbody>
-                <!-- Data dari Google Sheet akan dimasukkan di sini -->
+                <!-- Data dari Google Sheet akan muncul di sini -->
             </tbody>
         </table>
     </div>
